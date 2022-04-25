@@ -16,15 +16,21 @@ app.use((req,res,next)=>{
 
 app.use('/movies',moviesRouter);
 
+app.use('/users',userRouter);
+//Otros direccionaminetos ...
 app.get('/users/login',(req,res)=>{
+    console.log('---->app.js:getUser');
     res.json({msg: 'This is CORS-enabled for all origins!'})
+});
+app.post('/users/register',(req,res)=>{
+    console.log('---->app.js:getUser');
+
+    res.json({msg: 'pppppp'})
 });
 app.listen(process.env.PORT,()=>{
     console.log('listening on 3011');
 });
 
-app.use('/users',userRouter);
-//Otros direccionaminetos ...
 
 
 app.use('*',errorRouter);
